@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Landind page</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hero-section {
+    position: relative;
+    height: 100vh; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+#videoBg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+}
+.hero-content {
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.4); 
+    padding: 30px;
+    border-radius: 10px;
+}
+h1{
+    font-size: 3rem;
+}
+
+/* Dark overlay so text stands out */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(2px);
+}
+
+/* Content floats above the image */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: fadeUp 5s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  box-shadow: 0.3s ease;
+}
+.hero-content:hover{
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175)
+}
+.explore{
+    margin-top: 7%;
+}
+ a{
+    background: white;
+    padding: 12px 28px;
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 600;
+    color: blue;
+    border-radius: 10px;
+    margin-top: 10%;
+    cursor: pointer;
+}
+a:hover{
+    color: white;
+    background-color: #3f63d8;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media(max-width: 992px){
+    .hero-content{
+        min-height: 50vh;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
+</style>
+<body>
+    <section class="hero-section">
+        <video autoplay muted loop id="videoBg">
+            <source src="./media/989a122ace8d0cdff137558ae4307378.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Where creativity meets clean UI</p>
+        <div class="explore">
+            <a href="https://project-eight-kappa-48.vercel.app">Explore Now</a>
+        </div>
+        
+    </div>
+
+</section>
+    
+</body>
+</html>
